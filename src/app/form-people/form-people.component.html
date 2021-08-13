@@ -1,0 +1,52 @@
+<div class="form">
+  <span>
+    <label id="0" for="name">Name:</label>
+    <input [(ngModel)]="formDetail[0]" type="text" id="name" maxlength="15">
+  </span>
+  <span>
+    <label id="1" for="surname">Surname:</label>
+    <input [(ngModel)]="formDetail[1]" type="text" id="surrname" maxlength="15">
+  </span>
+  <span>
+    <label id="2" for="age">Age:</label>
+    <input [(ngModel)]="formDetail[2]" type="text" id="age" maxlength="2">
+  </span><br>
+  <span>
+    <label id="3" for="city">City:</label>
+    <input [(ngModel)]="formDetail[3]" type="text" id="city" maxlength="15">
+  </span>
+  <span>
+    <label id="4" for="ocupation">Ocupation:</label>
+    <input [(ngModel)]="formDetail[4]" type="text" id="ocupation" maxlength="20">
+  </span>
+  <span>
+    <label id="5" for="number" >Number:</label>
+    <input [(ngModel)]="formDetail[5]" type="text" id="number" maxlength="10">
+  </span><br>
+  <span>
+    <button (click)="testForm()">Submit</button>
+  </span><br>
+  <span>
+    <p *ngFor= "let warning of listOfWarnings">{{warning}} </p>
+  </span>
+</div>
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Age</th>
+      <th>City</th>
+      <th>Ocupation</th>
+      <th>Number</th>
+    </tr>
+    <tr *ngFor="let person of listOfPeople">
+      <td>{{person.name}} </td>
+      <td>{{person.surname}} </td>
+      <td>{{person.age}} </td>
+      <td>{{person.city}} </td>
+      <td>{{person.ocupation}} </td>
+      <td>{{person.number}} </td>
+    </tr>
+  </table>
+</div>

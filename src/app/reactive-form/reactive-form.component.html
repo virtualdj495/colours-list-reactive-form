@@ -1,0 +1,54 @@
+<div class="form">
+  <form [formGroup]="profileForm" (ngSubmit)="addPersonToTable()">
+    <span>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" maxlength="15">
+    </span>
+    <span>
+      <label for="surname">Surname:</label>
+      <input type="text" id="surrname" formControlName="surname" maxlength="15">
+    </span>
+    <span>
+      <label  for="age">Age:</label>
+      <input  type="text" id="age" formControlName="age" maxlength="2">
+    </span><br>
+    <span>
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city" maxlength="15">
+    </span>
+    <span>
+      <label  for="ocupation">Ocupation:</label>
+      <input  type="text" id="ocupation" formControlName="ocupation" maxlength="20">
+    </span>
+    <span>
+      <label for="number" >Number:</label>
+      <input type="text" id="number" formControlName="number" maxlength="10">
+    </span><br>
+    <span>
+      <button type="submit" [disabled]="!profileForm.valid" >Submit</button>
+    </span><br>
+    <span>
+      <p></p>
+    </span>
+  </form>
+</div>
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Age</th>
+      <th>City</th>
+      <th>Ocupation</th>
+      <th>Number</th>
+    </tr>
+    <tr *ngFor="let person of listOfPeople">
+      <td>{{person.name}} </td>
+      <td>{{person.surname}} </td>
+      <td>{{person.age}} </td>
+      <td>{{person.city}} </td>
+      <td>{{person.ocupation}} </td>
+      <td>{{person.number}} </td>
+    </tr>
+  </table>
+</div>

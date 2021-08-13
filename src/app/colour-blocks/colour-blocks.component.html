@@ -1,0 +1,17 @@
+<div>
+  <select [ngStyle]="{'background': selectedColour}">
+    <option *ngFor="let colour of colours" [ngStyle]="{'background': colour}" (click)="selectColour(colour)" ></option>
+  </select>
+</div>
+<div>
+  <span *ngFor="let select of selectedFilters">
+    <input type="checkbox" (click)="filterColours(select)" checked>
+    <label [ngStyle]="{'background' : select.colour}"></label>
+  </span>
+</div>
+<div>
+  <span class="rectangle"
+   *ngFor="let colour of filteredList"
+  [ngStyle]="{'background' : colour}">
+  </span>
+</div>
